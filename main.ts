@@ -1,10 +1,15 @@
 input.onButtonPressed(Button.A, function () {
-    Voeding += 5
+    if (Dood == 0) {
+        Voeding += 5
+    }
 })
 input.onButtonPressed(Button.B, function () {
-    Knuffel += 5
+    if (Dood == 0) {
+        Knuffel += 5
+    }
 })
 let Dood = 0
+Dood = 0
 let Knuffel = 20
 let Voeding = 20
 basic.forever(function () {
@@ -27,7 +32,7 @@ basic.forever(function () {
             `)
     }
     if (Knuffel < 1 || Voeding < 1) {
-        Dood = Dood
+        Dood = 1
         basic.showLeds(`
             . . . . .
             # # . # #
@@ -41,7 +46,4 @@ basic.forever(function () {
     Knuffel += -1
     Voeding += -1
     basic.pause(1000)
-})
-basic.forever(function () {
-	
 })
